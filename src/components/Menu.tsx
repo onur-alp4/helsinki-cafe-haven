@@ -1,16 +1,19 @@
 import { Card } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const Menu = () => {
+  const { t } = useTranslation();
+
   const menuItems = [
     {
-      category: "Breakfast",
+      category: t('menu.breakfast'),
       items: [
         { name: "Nordic Breakfast Bowl", price: "€12", description: "Organic oats, forest berries, honey" },
         { name: "Smoked Salmon Toast", price: "€14", description: "Rye bread, dill cream cheese" },
       ]
     },
     {
-      category: "Lunch",
+      category: t('menu.lunch'),
       items: [
         { name: "Forest Mushroom Soup", price: "€10", description: "Wild mushrooms, herbs, cream" },
         { name: "Open-Faced Shrimp", price: "€16", description: "Hand-peeled shrimp, egg, mayonnaise" },
@@ -21,7 +24,7 @@ const Menu = () => {
   return (
     <section className="py-20 bg-cafe-beige" id="menu">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-light text-cafe-brown text-center mb-12">Menu</h2>
+        <h2 className="text-4xl font-light text-cafe-brown text-center mb-12">{t('menu.title')}</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {menuItems.map((category) => (
             <Card key={category.category} className="p-6 bg-white/80 backdrop-blur">

@@ -1,6 +1,9 @@
 import { Card } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-20 bg-white" id="about">
       <div className="container mx-auto px-4">
@@ -13,14 +16,12 @@ const About = () => {
             />
           </div>
           <div className="md:w-1/2 space-y-6">
-            <h2 className="text-4xl font-light text-cafe-brown">Our Story</h2>
+            <h2 className="text-4xl font-light text-cafe-brown">{t('about.title')}</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Welcome to Café Helena, where Nordic traditions meet modern gastronomy. Founded by Helena Virtanen in 2020, 
-              our café has become a beloved spot in Helsinki's vibrant food scene.
+              {t('about.description1')}
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              We take pride in sourcing local ingredients and creating seasonal menus that reflect the pure flavors of Finnish cuisine.
-              Whether you're joining us for a morning coffee or planning a catered event, we bring the same dedication to quality and service.
+              {t('about.description2')}
             </p>
           </div>
         </div>
