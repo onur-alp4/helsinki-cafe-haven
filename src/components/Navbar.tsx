@@ -1,7 +1,11 @@
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
+  const { t } = useTranslation();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4">
@@ -12,7 +16,7 @@ const Navbar = () => {
           </Link>
           
           <NavigationMenu>
-            <NavigationMenuList className="hidden md:flex space-x-8">
+            <NavigationMenuList className="hidden md:flex space-x-8 items-center">
               <NavigationMenuItem>
                 <Link 
                   to="/#about" 
@@ -22,7 +26,7 @@ const Navbar = () => {
                     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
-                  About Us
+                  {t('nav.about')}
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -34,8 +38,11 @@ const Navbar = () => {
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
-                  Contact
+                  {t('nav.contact')}
                 </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <LanguageSwitcher />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
