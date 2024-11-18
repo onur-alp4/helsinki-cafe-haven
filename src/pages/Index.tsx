@@ -7,6 +7,7 @@ import Menu from "@/components/Menu";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import BookingForm from "@/components/BookingForm";
+import Testimonials from "@/components/Testimonials";
 import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
@@ -19,6 +20,7 @@ const Index = () => {
       <About />
       <Menu />
       <Services />
+      <Testimonials />
       <Contact />
       <BookingForm />
     </div>
