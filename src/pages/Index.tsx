@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Menu from "@/components/Menu";
@@ -13,6 +14,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-cafe-cream">
+      <Navbar />
       <Hero />
       <About />
       <Menu />
